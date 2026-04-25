@@ -103,10 +103,16 @@ Claude acts as **Product Manager** for this project. This means:
 - **SFTP Port:** 2222 (recommended)
 - **FTP Host:** m16.wpx.net
 - **FTP Port:** 21
-- **Username:** retrieve from WPX control panel → FTP/SFTP Accounts
-- **Password:** retrieve from WPX control panel → FTP/SFTP Accounts
-- **IMPORTANT:** Never store username or password in this document or in GitHub
-- Use PowerShell secure credential prompt to enter password safely each session
+- **Username:** userftp.ftp@homeheatproblems.com
+- **Password:** stored securely — do not write here
+- **Connect command:** `sftp -P 2222 userftp.ftp@homeheatproblems.com@m16.wpx.net`
+- **IMPORTANT:** Never store password in this document or in GitHub
+
+### PowerShell Workflow
+- **Connect to server:** `sftp -P 2222 userftp.ftp@homeheatproblems.com@m16.wpx.net`
+- **Upload a file:** `put "C:\local\path\file.css" remote/path/file.css`
+- **Auto-save to GitHub:** Runs automatically every night at midnight
+- **Manual save to GitHub:** type `save-site` in PowerShell
 
 ### Installed Plugins
 | Plugin | Purpose | Status |
@@ -156,7 +162,12 @@ Claude acts as **Product Manager** for this project. This means:
 - Chad makes content changes directly on live (low risk)
 - Eli makes code changes on staging first (required)
 
-### GitHub Repository (CODE HISTORY)
+### Child Theme — Kadence Child
+- **Status:** Active on live site ✅
+- **Server location:** /wp-content/themes/kadence-child/
+- **Local location:** C:\Users\duh\Documents\HomeHeatProblems website\homeheatproblems-custom\kadence-child\
+- **Files:** style.css (custom CSS goes here), functions.php (custom PHP goes here)
+- **Rule:** ALL CSS and code customizations go in child theme — never edit Kadence parent theme directly
 - **Repository:** https://github.com/chdptrsn46/homeheatproblems-custom.git
 - **Owner:** Eli Peterson
 - **Store in GitHub:** Custom CSS, code snippets, child theme files, this record file
